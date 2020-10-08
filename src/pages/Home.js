@@ -20,6 +20,12 @@ const Home = () => {
           <Avatar />
         </div>
       </div>
+      <div className="home__body">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png"
+          alt="google logo"
+        />
+      </div>
     </div>
   );
 };
