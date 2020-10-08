@@ -3,6 +3,7 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import AppsIcon from "@material-ui/icons/Apps";
 import { Avatar } from "@material-ui/core";
+import Search from "../components/Search";
 
 const Home = () => {
   return (
@@ -25,8 +26,11 @@ const Home = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1024px-Google_2015_logo.svg.png"
           alt="google logo"
         />
+        <div className="home__inputContainer">
+          {/* SearchBar */}
+          <Search />
+        </div>
       </div>
-      <div className="home__inputContainer">{/* SearchBar */}</div>
     </div>
   );
 };
