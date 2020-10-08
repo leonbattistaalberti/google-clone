@@ -26,6 +26,7 @@ const Home = () => {
           alt="google logo"
         />
       </div>
+      <div className="home__inputContainer">{/* SearchBar */}</div>
     </div>
   );
 };
