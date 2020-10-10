@@ -1,14 +1,17 @@
 import React from "react";
 import "./SearchPage.css";
 import { useStateValue } from "../StateProvider";
+import useGoogleSearch from "../hooks/useGoogleSearch";
 
 // https://developers.google.com/custom-search/v1/using_rest
 
-// search engine id: 05cd5cd79fdcb94b5
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const SearchPage = () => {
   const [state, dispatch] = useStateValue();
+  const { data } = useGoogleSearch(state.term);
 
+  console.log(data);
   return (
     <div className="searchPage">
       <div className="searchPage__header">
