@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchPage.css";
+import Search from "./Search";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../hooks/useGoogleSearch";
 import response from "../utils/response";
@@ -23,6 +24,9 @@ const SearchPage = () => {
             alt="google logo"
           />
         </Link>
+        <div className="searchPage__headerBody">
+          <Search hideButtons />
+        </div>
       </div>
     </div>
   );
