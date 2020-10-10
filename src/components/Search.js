@@ -1,22 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Search.css";
 import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from "@material-ui/icons/Mic";
 import { Button } from "@material-ui/core";
 
 const Search = () => {
+  const [input, setInput] = useState("");
+
+  const search = (evt) => {
+    evt.preventDefault();
+    console.log("Search Clicked", input);
+  };
+
   return (
-    <div className="search">
+    <form className="search">
       <div className="search__input">
         <SearchIcon className="search__inputIcon" />
-        <input />
+        <input value={input} onChange={(evt) => setInput(evt.target.value)} />
         <MicIcon />
       </div>
       <div className="search__buttons">
-        <Button variant="outlined"> Google Search </Button>
+        <Button type="submit" variant="outlined" onClick={search}>
+          {" "}
+          Google Search{" "}
+        </Button>
         <Button variant="outlined"> I am Feeling Lucky </Button>
       </div>
-    </div>
+    </form>
   );
 };
 
