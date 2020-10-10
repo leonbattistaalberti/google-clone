@@ -6,7 +6,6 @@ import { useStateValue } from "../StateProvider";
 
 // search engine id: 05cd5cd79fdcb94b5
 
-const API_KEY = process.env.API_KEY;
 console.log(process.env);
 const SearchPage = () => {
   const [state, dispatch] = useStateValue();
