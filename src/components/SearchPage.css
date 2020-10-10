@@ -1,1 +1,5 @@
-.searchPage__logo {}
+.searchPage__logo {
+    object-fit: contain;
+    height: 50px;
+    margin-right: 50px;
+}
