@@ -3,7 +3,7 @@ import "./SearchPage.css";
 import Search from "./Search";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../hooks/useGoogleSearch";
-import response from "../utils/response";
+import response from "../utils/response"; // TODO: remove
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import DescriptionIcon from "@material-ui/icons/Description";
@@ -17,9 +17,9 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const SearchPage = () => {
   const [state, dispatch] = useStateValue();
   //   LIVE API CALL
-  //  const { data } = useGoogleSearch(state.term);
+  const { data } = useGoogleSearch(state.term);
 
-  const data = response;
+  //const data = response;
   console.log(data);
   return (
     <div className="searchPage">
@@ -32,7 +32,9 @@ const SearchPage = () => {
           />
         </Link>
         <div className="searchPage__headerBody">
+          {/* TODO: Search form input should display the search term when the search results display */}
           <Search hideButtons />
+
           <div className="searchPage__options">
             <div className="searchPage__optionsLeft">
               <div className="searchPage__option">
