@@ -18,6 +18,7 @@ const SearchPage = () => {
   const [state, dispatch] = useStateValue();
   //   LIVE API CALL
   //  const { data } = useGoogleSearch(state.term);
+
   const data = response;
   console.log(data);
   return (
@@ -71,6 +72,25 @@ const SearchPage = () => {
           </div>
         </div>
       </div>
+      {true && (
+        <div className="SearchPage__results">
+          <p className="searchPage__resultCount">
+            About {data?.searchInformation.formattedTotalResults} results{" "}
+            {data?.searchInformation.formattedSearchTime} seconds for{" "}
+            {state.term}
+          </p>
+
+          {data?.items.map((item) => (
+            <div className="searchPage__result">
+              <a href={item.link}>{item.displayLink}</a> v
+              <a className="searchPage__resultTitle" href={item.link}>
+                <h2>{item.title}</h2>
+              </a>
+              <p className="searchPage__resultSnippet">{item.snippet}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
